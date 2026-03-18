@@ -47,7 +47,6 @@ console.log(nameCity("New York"))
 
 function sumArray(arr){
     let sumAr = 0
-    console.log(sumAr)
     for(let i = 0; i < arr.length; i++){
         let singleNum = arr[i]
         sumAr += singleNum
@@ -94,7 +93,18 @@ console.log(checkAngle(90))
 
 //8. Crea una funzione che crei un acronimo a partire da una frase. Es. "Fabbrica Italiana Automobili Torino" deve ritornare "FIAT"
 
+function achronWord(str){
+    let arrAchron = str.split(" ")
+    let arrSingleLetter = []
+    for (let i = 0; i < arrAchron.length; i++){
+        let firstLetter = arrAchron[i].split("")
+        arrSingleLetter.push(firstLetter[0])
+    }
+    let achronWordLet = arrSingleLetter.toString().replaceAll(",", "").toUpperCase()
+    return achronWordLet
+}
 
+console.log(achronWord("parole a caso"))
 
 //9.Extra - 1. Partendo da una stringa (passata come parametro), ritorna il carattere più usato nella stringa stessa.
 
