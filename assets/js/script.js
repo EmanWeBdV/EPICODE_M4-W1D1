@@ -108,7 +108,53 @@ console.log(achronWord("parole a caso"))
 
 //9.Extra - 1. Partendo da una stringa (passata come parametro), ritorna il carattere più usato nella stringa stessa.
 
+//1. Partendo da una stringa (passata come parametro), ritorna il carattere più usato nella stringa stessa.
+
+function bestLetter(str){
+let maxSum = 0
+    let arr = str.split("")
+
+    let sum = 0
+
+    let sumArray = []
+    for (let i = 0;  i < arr.length; i++){
+        let char = arr[i]
+        for (let i = 0; i < arr.length; i++){
+            if(arr[i] === char){
+                sum++
+            }
+            
+        }
+        sumArray.push(sum)
+        sum = 0
+    }
+    for (let i = 0; i < sumArray.length; i++){
+        if(sumArray[i] < sumArray[i + 1]){
+            maxSum = sumArray [i + 1]
+        } 
+
+        }
+    let indexSum = sumArray.indexOf(maxSum)
+    let letter = arr[indexSum]
+    console.log(letter)
+    
+}
+console.log(bestLetter("assassino"))
+
 //10.Extra - 2. Controlla che due stringhe passate come parametri siano gli anagrammi l’una dell’altra. Ignora punteggiatura e spazi e ricordate di rendere la stringa tutta in minuscolo. Se le due parole sono anagrammi, ritorna `true`, altrimenti ritorna `false`.
+
+
+function eachAnagram (str1, str2){
+    let firstWord = str1.toLowerCase()
+    let secondWord = str2.toLowerCase()
+    let firstWordClean = firstWord.replace(/[^a-zA-Z]/g, "")
+    let secondWordClean = secondWord.replace(/[^a-zA-Z]/g, "")
+    let firstArray = firstWordClean.split("")
+    let secondArray = secondWordClean.split("")
+    
+}
+
+console.log(eachAnagram("P##inu76", "paolo87!!"))
 
 //11.Extra - 3. Partendo da una lista di possibili anagrammi e da una parola (entrambi passati come parametri), ritorna un nuovo array contenente tutti gli anagrammi corretti della parola data.
 
