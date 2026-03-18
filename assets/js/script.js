@@ -1,20 +1,84 @@
 //1. Crea una funzione che controlli due numeri interi. Ritorna 'true' se uno dei due è 50 o se la somma dei due è 50
 
+function checkNumber(num1, num2){
+    if(num1 === 50 || num2 === 50 || (num1 + num2 === 50)){
+        return true
+    }
+}
+
+console.log(checkNumber(0, 50))
+
 //2. Crea una funzione che rimuova il carattere ad una specifica posizione da un stringa. Passa la stringa e la posizione come parametri e ritorna la strina modificata
+
+function modifyWord(str){
+    let arrWord = str.split("")
+    let removeChar = arrWord.splice(1)
+    let newWordMod = removeChar.toString().replaceAll(",", "")
+    return newWordMod
+}
+
+console.log(modifyWord("pane"))
 
 //3. Crea una funzione che controlli se due numeri siano compresi tra 40 e 60 o tra 70 e 100. Ritorna 'true' se rispecchiano queste condizioni, altrimenti ritorna 'false'
 
+function checkRangeNumber (num1, num2){
+    if((num1 >= 40 && num1 <= 60) && (num2 >= 40 && num2 <= 60)){
+        return true
+    } else {
+        return false
+    }
+}
+
+console.log(checkRangeNumber(39, 60))
+
 //4. Crea una funzione che accetti un nome di città come parametro e ritorni il nome stesso se inzia con "Los" o "New", altrimenti ritorni 'false'
+
+function nameCity(str){
+    if (str.startsWith("Los") || str.startsWith("New")){
+        return str
+    } else {
+        return false
+    }
+}
+
+console.log(nameCity("New York"))
 
 //5. Crea una funzione che calcoli e ritorni la somma di tutti gli elementi di un array. L'array deve essere passato come parametro.
 
-//6. Crea una funzione che controlli che un array NOIN contenga i numeri 1 o 3. Se NON li contiene, ritorna 'true', altrimenti ritorna 'false'
+function sumArray(arr){
+    let sumAr = 0
+    console.log(sumAr)
+    for(let i = 0; i < arr.length; i++){
+        let singleNum = arr[i]
+        sumAr += singleNum
+    } return sumAr
+    
+}
+
+let numArray = [1 ,4, 5]
+console.log(sumArray(numArray))
+
+//6. Crea una funzione che controlli che un array NON contenga i numeri 1 o 3. Se NON li contiene, ritorna 'true', altrimenti ritorna 'false'
+
+function checkNumArr(arr){
+    for(let i = 0; i < arr.length; i++){
+        if (arr[i] === 1 || arr[i] === 3){
+            return false
+        }
+    } 
+    return true
+}
+
+let numArrayOfCheck = [1, 6, 5]
+console.log(checkNumArr(numArrayOfCheck))
 
 //7. Crea una funzione per trovare il tipo di un angolo i cui gradi sono passati come parametro.
 /*Angolo acuto: meno di 90° -> ritorna "acuto" */
 /*Angolo ottuso: tra i 90° e i 180° -> ritorna "ottuso" */
 /*Angolo retto: 90° -> ritorna "retto" */
 /*Angolo piatto: 180° -> ritorna "piatto" */
+
+
 
 //8. Crea una funzione che crei un acronimo a partire da una frase. Es. "Fabbrica Italiana Automobili Torino" deve ritornare "FIAT"
 
