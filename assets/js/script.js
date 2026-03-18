@@ -78,9 +78,23 @@ console.log(checkNumArr(numArrayOfCheck))
 /*Angolo retto: 90° -> ritorna "retto" */
 /*Angolo piatto: 180° -> ritorna "piatto" */
 
+function checkAngle(num){
+    if (num < 90){
+        return "acuto"
+    } else if(num === 90){
+        return "retto"
+    } else if (num === 180) {
+        return "piatto"
+    }else if (num > 90 && num < 180){
+        return "ottuso"
+    }
+}
 
+console.log(checkAngle(90))
 
 //8. Crea una funzione che crei un acronimo a partire da una frase. Es. "Fabbrica Italiana Automobili Torino" deve ritornare "FIAT"
+
+
 
 //9.Extra - 1. Partendo da una stringa (passata come parametro), ritorna il carattere più usato nella stringa stessa.
 
