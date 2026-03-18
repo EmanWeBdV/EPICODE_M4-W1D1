@@ -108,14 +108,10 @@ console.log(achronWord("parole a caso"))
 
 //9.Extra - 1. Partendo da una stringa (passata come parametro), ritorna il carattere più usato nella stringa stessa.
 
-//1. Partendo da una stringa (passata come parametro), ritorna il carattere più usato nella stringa stessa.
-
 function bestLetter(str){
 let maxSum = 0
     let arr = str.split("")
-
     let sum = 0
-
     let sumArray = []
     for (let i = 0;  i < arr.length; i++){
         let char = arr[i]
@@ -149,20 +145,69 @@ function eachAnagram (str1, str2){
     let secondWord = str2.toLowerCase()
     let firstWordClean = firstWord.replace(/[^a-zA-Z]/g, "")
     let secondWordClean = secondWord.replace(/[^a-zA-Z]/g, "")
-    let firstArray = firstWordClean.split("")
-    let secondArray = secondWordClean.split("")
-    
+    if (firstWordClean.length !== secondWordClean.length){
+        return false
+    }
+    let firstSorted = firstWordClean.split("").sort().join("");
+    let secondSorted = secondWordClean.split("").sort().join("");
+
+  return firstSorted === secondSorted;
 }
 
-console.log(eachAnagram("P##inu76", "paolo87!!"))
+console.log(eachAnagram("amor", "Roma"))
 
 //11.Extra - 3. Partendo da una lista di possibili anagrammi e da una parola (entrambi passati come parametri), ritorna un nuovo array contenente tutti gli anagrammi corretti della parola data.
 
+let listAnagram = ["amor", "armo", "orma", "ramo", "mora", "paolo", "francesco", "du", "felpa", "ce"]
+let wordCheckAnagram = "Roma"
+let listCorrectAnagram = []
+
+function correctAnagram(word, list){
+    let wordToCheck = word.toLowerCase().replace(/[^a-zA-Z]/g, "")
+    for (let i = 0; i < list.length; i++){
+        let wordFromArrToCheck = list[i].toString().toLowerCase().replace(/[^a-zA-Z]/g, "")
+        if(wordToCheck.length === wordFromArrToCheck.length){
+            listCorrectAnagram.push(list[i])
+        }
+    }
+    return listCorrectAnagram
+}
+
+console.log(correctAnagram(wordCheckAnagram, listAnagram))
+
 //12.Extra - 4. Partendo da una stringa passata come parametro, ritorna `true` se la stringa è palindroma o `false` se non lo è.
+
+function checkPalindr(str){
+     let firstWordToArr = str.split("")
+     let sameWordToArr = str.split("").reverse()
+     for (let i = 0; i < firstWordToArr.length; i++){
+       let firstWordSingleLetter = firstWordToArr[i].toString().toLowerCase().replace(/[^a-zA-Z]/g, "")
+       let secondWordSingleLetter = sameWordToArr[i].toString().toLowerCase().replace(/[^a-zA-Z]/g, "")
+        if(firstWordSingleLetter !== secondWordSingleLetter){
+            return false
+        } 
+    }
+    return true
+}
+
+console.log(checkPalindr("aerea"))
 
 //13.Extra - 5. Partendo da un numero intero (dai parametri) ritorna un numero che contenga le stesse cifre, ma in ordine contrario. Es. 189 ⇒ 981
 
+function reversNumber(num){
+    let numToString = num.toString()
+    let stringToArr = numToString.split("").reverse()
+    let ArrToString = stringToArr.toString().replaceAll(",", "")
+    let numReverse = parseInt(ArrToString)
+    return numReverse
+}
+
+console.log(reversNumber(342))
+
 //14.Extra - 6. Scrivi una funzione che accetti un numero positivo X come parametro. La funzione dovrebbe stampare a console una “scala” creata con il carattere “#” e avente X scalini.
+
+
+
 /*
 Es. 
 
